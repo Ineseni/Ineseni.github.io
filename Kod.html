@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kviz</title>
+</head>
+<body>
+	<h1>Cao Adna!</h1>
+	<div id="puzzle"></div>
+	<div id="picture" style="display: none;">
+		<img src="https://lh3.googleusercontent.com/PsxJ0G0R4b1MExQuKlAnR1ZzG5SA975aCG4lrVzdR6TAO6UMIf0PzJVyNAgqtNGFcuzQr24ZZM4aqtx60zT4WaYX7Cmg2gm7Sx4GyDYuZlZOa9IQ08cujyWrAfXZDjF7wP8x-pLgh3wXuNfm8OHwLOoShMSaimDcfr9np3Zq3Igajt21huNfPCHNKQPkvo_Cj0QzU4vuiM4ixa38peOW7huxool0ZkgVd9Y-rSORa-kw2yZD_9Li9nA5mfw8VHlJmIM_mywNkVbTDxLS3h21Zi5NFwmGO-CsEWyI3iINqAfC9c5lnVf0i7TBGK8ldfzBrrUQTYN_MATrMVAr948uF_gvUpbsxYvs4nOn7vlfbAqD0MBU34fxS4Q0nQ-HFwCegLjxmCQ9ciyq79CGt0U5TtLk16SRr8Hl-mT20LaPbWi0IzJPCEy0QjsmG9_qdvQng3ydGonyeYWmBJPg-2xebqdcYGs9xn899jrD4EWDdCJdENpfS9SpurblTQT0ls8AL4jYu6NG9v4lcltCAi7Ktq4tq0I53cY0ZSeHO9D6zVyrJwY48TEytR7RgoNDTl4szcycoSlU6L6Sux7Dn1bcsv_8cnFmDcS62OyjeZV2JHse7txIkRqBnGPAy18DakZ2t5WylnqKC9IPc8Gh9LLp6vtuey0bU4ZYcGdM4J4naHgJe53VRLI05kg5dyviYAwPCzWB4Qr8y6SU5p9KAT7Sd7IQH_DAHaIHurTK5vuDEVfb9J6ZLswFMVQyMbmJevBYgjAbTELz9KdQzLWwk6Ad2VBkTsBiJrUr2VPUDX8zJZ-sWJfWGXk2yK5suPU0UJQu6X1aMoq0TB0m_iqKw8kJpvLoKI497YsMsMoTs1n0vz1Ag635hutcVozZdPtP-FeZu9JSd_zlUi-R3XKWWWE4EAHq4tzynSnxrnQqxHiTh4GPrW4CmnLKJ6bKTbM908v0zPmin_qQW8JAme1DEJ0ciKSDGpt2MZf8uAmUm9P05bm20jQ-_3WK6R5oDd7nGEoNkkjqC634ewXy74edH_OemHxFCsw=w675-h900-s-no?authuser=0.jpg" alt="Image">
+	</div>
+	<script>
+		let puzzleDiv = document.getElementById("puzzle");
+		let puzzle = "(8*3+23+3*3+13*2+1+19)+(23+7*3+2*3+14+3*3+19+2*3+1+19)";
+		let solution = "sretan rodjendan";
+		let message = "Rijesi zadatak: " + puzzle + ". Ne zuri!";
+
+		puzzleDiv.innerHTML = message + "<br><br>" + "<input type='text' id='solution' placeholder='Tvoje rjesenje je:'> <button onclick='checkSolution()'>Check solution</button>";
+		function checkSolution() {
+			let solutionInput = document.getElementById("solution").value;
+			if (solutionInput == solution) {
+				puzzleDiv.innerHTML = "BRAVO, SRETAN 27. RODJENDAN!";
+				document.getElementById("picture").style.display = "block";
+			} else {
+				puzzleDiv.innerHTML = "Bolje je poduzeti mnogo malih koraka u pravom smjeru, nego napraviti veliki skok koji ce vas, u konacnici, unazaditi - stara kineska izreka. Pokusaj ponovo!";
+			}
+		}
+	</script>
+</body>
+</html>
